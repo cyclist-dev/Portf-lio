@@ -15,6 +15,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-image: url(img.jpg);
+    background-size: cover;
 }
 
 /* Container principal */
@@ -24,7 +25,7 @@ body {
     max-width: 700px;
     padding: 30px;
     border-radius: 16px;
-    backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     transition: 0.3s ease;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 25px rgba(255, 105, 180, 0.2); 
@@ -43,11 +44,17 @@ header {
 }
 
 h1 {
-    color: #482c50;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6em;
+     color: #482c50; /* cor original */
+    font-family: 'Poiret One', cursive;
+    font-size: 40px;
     font-style: italic;
+    font-weight: bold;
     margin-bottom: 8px;
+    text-shadow:
+        0 0 5px #b33abe,
+        0 0 10px #88428fa2,
+        0 0 20px #b33abe,
+        0 0 40px #b33abe; /* efeito neon */
 }
 
 .intro {
@@ -62,7 +69,7 @@ section {
 
 h2 {
     color: #482c50;
-    font-size: 1.4em;
+    font-size: 20px;
     margin-bottom: 10px;
     border-left: 5px solid #7a1783;
     padding-left: 10px;
@@ -81,7 +88,7 @@ ul {
 }
 
 ul li {
-   background: rgba(255, 182, 193, 0.25); 
+   background: rgba(91, 24, 155, 0.219); 
     margin: 6px 0;
     padding: 12px 18px;
     border-radius: 12px;
@@ -115,5 +122,33 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
-    color: #616161;
+    color: #ddd8d8;
+}
+/* Links */
+a {
+    position: relative;
+    color: #6b4a92; /* lilás suave que combina com o fundo */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #ffd6ff; /* rosinha claro */
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: #efd6ffbb; /* clarinho no hover */
+    text-shadow: 0 0 8px rgba(207, 168, 255, 0.8);
+}
+
+a:hover::after {
+    width: 100%; /* anima a linha */
 }
